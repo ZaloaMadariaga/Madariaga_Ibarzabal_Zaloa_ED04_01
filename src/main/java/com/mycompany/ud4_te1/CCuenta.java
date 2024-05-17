@@ -1,8 +1,13 @@
 package com.mycompany.ud4_te1;
 
 /**
+La clase CCuenta representa una cuenta bancaria y contiene métodos para realizar operaciones como ingresar o retirar dinero. 
+* La cuenta tiene un nombre, un número de cuenta, un saldo, un tipo de interés y una comisión fija para retirar dinero. 
+* Los métodos permiten consultar y modificar estos atributos, así como realizar operaciones de ingreso y retirada de dinero,  
+* 
+* @version  10.0
  *
- * @author zmada
+ * @author Zaloa Madariaga Ibarzabal
  */
 public class CCuenta {
 
