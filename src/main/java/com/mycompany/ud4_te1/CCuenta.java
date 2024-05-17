@@ -7,46 +7,33 @@ public class CCuenta {
     private double saldo;
     private double tipoInteres;
 
-
-    public CCuenta() {
+    /**
+     * @return the cuenta
+     */
+    public String getCuenta() {
+        return cuenta;
     }
 
-    public CCuenta(String nom, String cue, double sal, double tipo) {
-        nombre = nom;
-        cuenta = cue;
-        saldo = sal;
-        tipoInteres = tipo;
+    /**
+     * @param cuenta the cuenta to set
+     */
+    public void setCuenta(String cuenta) {
+        this.cuenta = cuenta;
     }
 
-    public void asignarNombre(String nom) {
-        setNombre(nom);
-    }
+    /**
+     * @return the saldo
+     */
 
-    public String obtenerNombre() {
-        return getNombre();
-    }
-
-    public double estado() {
+    public double getSaldo() {
         return saldo;
     }
 
-    public void ingresar(double cantidad) throws Exception {
-        if (cantidad < 0) {
-            throw new Exception("No se puede ingresar una cantidad negativa");   
-        }
-        saldo = saldo + cantidad;
-    }
-
-    public void retirar(double cantidad) throws Exception {
-        if (cantidad <= 0)
-            throw new Exception ("No se puede retirar una cantidad negativa");
-        if (estado() < cantidad + 2)
-            throw new Exception ("No se hay suficiente saldo");
-        saldo = saldo - (cantidad + 2);
-    }
-
-    public String obtenerCuenta() {
-        return cuenta;
+    /**
+     * @param saldo the saldo to set
+     */
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
     public String getNombre() {
@@ -64,4 +51,34 @@ public class CCuenta {
     public void setTipoInteres(double tipoInteres) {
         this.tipoInteres = tipoInteres;
     }
+
+    public CCuenta() {
+    }
+
+    public CCuenta(String nom, String cue, double sal, double tipo) {
+        nombre = nom;
+        cuenta = cue;
+        saldo = sal;
+        tipoInteres = tipo;
+    }
+
+
+
+    public void ingresar(double cantidad) throws Exception {
+        if (cantidad < 0) {
+            throw new Exception("No se puede ingresar una cantidad negativa");   
+        }
+        saldo = saldo + cantidad;
+    }
+
+    public void retirar(double cantidad) throws Exception {
+        if (cantidad <= 0)
+            throw new Exception ("No se puede retirar una cantidad negativa");
+        if (getSaldo() < cantidad + 2)
+            throw new Exception ("No se hay suficiente saldo");
+        saldo = saldo - (cantidad + 2);
+    }
+
+
+
 }
