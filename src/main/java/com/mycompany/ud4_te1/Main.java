@@ -8,10 +8,10 @@ public class Main {
         double saldoActual;
 
         cuentaTrabajo = new CCuenta("Antonio López","1000-2365-85-1230456789", 2500,0);
-        operativaCuenta(cuentaTrabajo);
+        operativaCuenta(cuentaTrabajo, cuentaTrabajo);
     }
 
-    private static void operativaCuenta(CCuenta cuentaTrabajo) {
+    private static void operativaCuenta(CCuenta cuentaTrabajo, CCuenta cantidad) {
         double saldoActual;
         saldoActual = cuentaTrabajo.getSaldo();
         System.out.println("El saldo actual es " + saldoActual);
