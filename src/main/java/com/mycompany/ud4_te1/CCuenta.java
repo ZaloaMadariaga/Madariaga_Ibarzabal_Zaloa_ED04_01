@@ -1,5 +1,9 @@
 package com.mycompany.ud4_te1;
 
+/**
+ *
+ * @author zmada
+ */
 public class CCuenta {
 
     private String nombre;
@@ -38,25 +42,51 @@ public class CCuenta {
         this.saldo = saldo;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getTipoInteres() {
         return tipoInteres;
     }
 
+    /**
+     *
+     * @param tipoInteres
+     */
     public void setTipoInteres(double tipoInteres) {
         this.tipoInteres = tipoInteres;
     }
 
+    /**
+     *
+     */
     public CCuenta() {
     }
 
+    /**
+     *
+     * @param nom
+     * @param cue
+     * @param sal
+     * @param tipo
+     */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
@@ -64,8 +94,11 @@ public class CCuenta {
         tipoInteres = tipo;
     }
 
-
-
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
             throw new Exception("No se puede ingresar una cantidad negativa");   
@@ -73,6 +106,11 @@ public class CCuenta {
         saldo = saldo + cantidad;
     }
 
+    /**
+     *
+     * @param cantidad
+     * @throws Exception
+     */
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0)
             throw new Exception ("No se puede retirar una cantidad negativa");
