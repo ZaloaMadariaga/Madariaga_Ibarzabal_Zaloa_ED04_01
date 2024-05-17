@@ -11,98 +11,114 @@ La clase CCuenta representa una cuenta bancaria y contiene métodos para realiza
  */
 public class CCuenta {
 
-    private String nombre;
-    private String cuenta;
-    private double saldo;
-    private double tipoInteres;
-    private static final int COMISION =2;
-    
+    private String nombre; // Nombre del titular de la cuenta
+    private String cuenta; // Número de cuenta
+    private double saldo; // Saldo actual de la cuenta
+    private double tipoInteres; // Tipo de interés asociado a la cuenta
+    private static final int COMISION = 2; // Valor constante para la comisión por retirar dinero
 
+    
+      /**
+     * Obtiene el nombre del titular de la cuenta.
+     * 
+     * @return El nombre del titular de la cuenta.
+     */
+    public String getNombre() {
+        return nombre;
+    }
     /**
-     * @return the cuenta
+     * Establece el nombre del titular de la cuenta.
+     * 
+     * @param nombre El nombre del titular de la cuenta.
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+   /**
+     * Obtiene el número de cuenta.
+     * 
+     * @return El número de cuenta.
      */
     public String getCuenta() {
         return cuenta;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * Establece el número de cuenta.
+     * 
+     * @param cuenta El número de cuenta.
      */
     public void setCuenta(String cuenta) {
         this.cuenta = cuenta;
     }
 
-    /**
-     * @return the saldo
+   /**
+     * Obtiene el saldo de la cuenta.
+     * 
+     * @return El saldo de la cuenta.
      */
-
-    public double getSaldo() {
+      public double getSaldo() {
         return saldo;
     }
+       
 
     /**
-     * @param saldo the saldo to set
+     * Establece el saldo de la cuenta.
+     * 
+     * @param saldo El saldo de la cuenta.
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    /**
+    
+      /**
+     * Obtiene el tipo de interés de la cuenta.
      *
-     * @return
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     *
-     * @param nombre
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     *
-     * @return
+     * @return El tipo de interés de la cuenta.
      */
     public double getTipoInteres() {
         return tipoInteres;
     }
+    
 
     /**
-     *
-     * @param tipoInteres
+     * Establece el tipo de interés de la cuenta.
+     * 
+     * @param tipoInterés
      */
-    public void setTipoInteres(double tipoInteres) {
-        this.tipoInteres = tipoInteres;
+    public void setTipoInteres(double tipoInterés) {
+        this.tipoInteres = tipoInterés;
     }
-
+    
+  
     /**
      *
      */
+    
     public CCuenta() {
     }
 
-    /**
-     *
-     * @param nom
-     * @param cue
-     * @param sal
-     * @param tipo
+     /**
+     * Constructor parametrizado de la clase CCuenta.
+     * @param nom Nombre del titular de la cuenta.
+     * @param cue Número de cuenta.
+     * @param sal Saldo de la cuenta.
+     * @param tipo Tipo de interés de la cuenta.
      */
     public CCuenta(String nom, String cue, double sal, double tipo) {
         nombre = nom;
         cuenta = cue;
         saldo = sal;
         tipoInteres = tipo;
-    }
 
-    /**
-     *
-     * @param cantidad
-     * @throws Exception
+    }
+    
+
+     /**
+     * Método para realizar un depósito en la cuenta.
+     * @param cantidad Cantidad a depositar.
+     * @throws Exception Si la cantidad a depositar es negativa.
      */
     public void ingresar(double cantidad) throws Exception {
         if (cantidad < 0) {
@@ -110,11 +126,12 @@ public class CCuenta {
         }
         saldo = saldo + cantidad;
     }
+    
 
     /**
-     *
-     * @param cantidad
-     * @throws Exception
+     * Método para realizar un retiro de la cuenta.
+     * @param cantidad Cantidad a retirar.
+     * @throws Exception Si la cantidad a retirar es negativa o si no hay saldo suficiente.
      */
     public void retirar(double cantidad) throws Exception {
         if (cantidad <= 0)
@@ -123,7 +140,5 @@ public class CCuenta {
             throw new Exception ("No se hay suficiente saldo");
         saldo = saldo - (cantidad + COMISION);
     }
-
-
-
+    
 }
